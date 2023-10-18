@@ -36,14 +36,14 @@
         </aside>
         <main>
             <h2 class="titulo-principal">Carrito de Compras</h2>
-            
+
             <div class="contenedor-carrito">
-                <p class="carrito-vacío"> Tu carrito esta vacío</p>
-                
-                <div class="carrito-productos">
-                    
+                <p class="carrito-vacio"> Tu carrito esta vacío</p>
+
+                <div class="carrito-productos hidden">
+
                     <div class="carrito-producto">
-                        <img src="./img/teclado-genius-gx-scorpion-k8.webp" alt="">
+                        <img class="carrito-producto-imagen" src="./img/teclado-genius-gx-scorpion-k8.webp" alt="Teclado Genius gx scorpion k8">
                         <div class="carrito-producto-titulo">
                             <small>Título</small>
                             <h3>Teclado Genius gx scorpion k8</h3>
@@ -64,7 +64,7 @@
                     </div>
 
                     <div class="carrito-producto">
-                        <img src="./img/teclado-genius-slimstar-230.webp" alt="">
+                        <img class="carrito-producto-imagen" src="./img/teclado-genius-slimstar-230.webp" alt="Teclado Genius Slimstar 230">
                         <div class="carrito-producto-titulo">
                             <small>Título</small>
                             <h3>Teclado Genius Slimstar 230</h3>
@@ -85,7 +85,7 @@
                     </div>
 
                 </div>
-                <div class="carrito-funciones">
+                <div class="carrito-funciones hidden">
                     <div class="carrito-funciones-izquierda">
                         <button class="carrito-funciones-vaciar">Vaciar carrito</button>
                     </div>
@@ -95,10 +95,15 @@
                             <p id="Total">$14000</p>
                         </div>
                         <button class="carrito-funciones-comprar">Finalizar Compra</button>
-
-                        
                     </div>
                 </div>
+                <p class="carrito-comprado hidden"> ¡Muchas gracias por tu compra!</p>
+
             </div>
         </main>
     </div>
+
+    <script src="./js/carrito.js"></script>
+</body>
+
+</html>

@@ -276,6 +276,6 @@ font-size: .75rem;
    border-bottom-right-radius: 1rem;
 }
 
-.hidden {
+.disabled {
    display: none;
 }

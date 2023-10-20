@@ -38,72 +38,33 @@
             <h2 class="titulo-principal">Carrito de Compras</h2>
 
             <div class="contenedor-carrito">
-                <p class="carrito-vacio"> Tu carrito esta vacío</p>
+                <p id="carrito-vacio" class="carrito-vacio"> Tu carrito esta vacío</p>
 
-                <div class="carrito-productos hidden">
-
-                    <div class="carrito-producto">
-                        <img class="carrito-producto-imagen" src="./img/teclado-genius-gx-scorpion-k8.webp" alt="Teclado Genius gx scorpion k8">
-                        <div class="carrito-producto-titulo">
-                            <small>Título</small>
-                            <h3>Teclado Genius gx scorpion k8</h3>
-                        </div>
-                        <div class="carrito-producto-cantidad">
-                            <small>Cantidad</small>
-                            <p>1</p>
-                        </div>
-                        <div class="carrito-producto-precio">
-                            <small>Precio</small>
-                            <p>$5300</p>
-                        </div>
-                        <div class="carrito-producto-subtotal">
-                            <small>Subtotal</small>
-                            <p>$5300</p>
-                        </div>
-                        <button class="carrito-producto-eliminar"><i class="bi bi-trash-fill"></i></button>
-                    </div>
-
-                    <div class="carrito-producto">
-                        <img class="carrito-producto-imagen" src="./img/teclado-genius-slimstar-230.webp" alt="Teclado Genius Slimstar 230">
-                        <div class="carrito-producto-titulo">
-                            <small>Título</small>
-                            <h3>Teclado Genius Slimstar 230</h3>
-                        </div>
-                        <div class="carrito-producto-cantidad">
-                            <small>Cantidad</small>
-                            <p>2</p>
-                        </div>
-                        <div class="carrito-producto-precio">
-                            <small>Precio</small>
-                            <p>$4350</p>
-                        </div>
-                        <div class="carrito-producto-subtotal">
-                            <small>Subtotal</small>
-                            <p>$8700</p>
-                        </div>
-                        <button class="carrito-producto-eliminar"><i class="bi bi-trash-fill"></i></button>
-                    </div>
+                <div id="carrito-productos" class="carrito-productos disabled">
 
                 </div>
-                <div class="carrito-funciones hidden">
+
+                <div id="carrito-funciones" class="carrito-funciones disabled">
                     <div class="carrito-funciones-izquierda">
-                        <button class="carrito-funciones-vaciar">Vaciar carrito</button>
+                        <button id="carrito-funciones-vaciar" class="carrito-funciones-vaciar">Vaciar carrito</button>
                     </div>
                     <div class="carrito-funciones-derecha">
                         <div class="carrito-funciones-total">
                             <p>Total</p>
                             <p id="Total">$14000</p>
                         </div>
-                        <button class="carrito-funciones-comprar">Finalizar Compra</button>
+                        <button id="carrito-funciones-comprar" class="carrito-funciones-comprar">Finalizar
+                            Compra</button>
                     </div>
                 </div>
-                <p class="carrito-comprado hidden"> ¡Muchas gracias por tu compra!</p>
+                <p id="carrito-comprado" class="carrito-comprado disabled"> ¡Muchas gracias por tu compra!</p>
 
             </div>
         </main>
     </div>
 
     <script src="./js/carrito.js"></script>
+
 </body>
 
 </html>

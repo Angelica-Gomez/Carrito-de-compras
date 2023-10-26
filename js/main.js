@@ -1,140 +1,10 @@
-const productos = [
-
-    //mouses
-    {
-        id: "mouse-01",
-        titulo: "Mouse Genius Ammox X1 400",
-        imagen: "./img/mouses/mouse-genius-ammox-x1-400.webp",
-        categoria: {
-            nombre: "Mouses",
-            id: "mouses"
-        },
-        precio: 3749
-    },
-
-    {
-        id: "mouse-02",
-        titulo: "Mouse Logitech Hero G 403",
-        imagen: "./img/mouses/mouse-logitech-g403.webp",
-        categoria: {
-            nombre: "Mouses",
-            id: "mouses"
-        },
-        precio: 16199,
-    },
-
-    {
-        id: "mouse-03",
-        titulo: "Mouse Logitech USB M 90",
-        imagen: "./img/mouses/mouse-oficina.webp",
-        categoria: {
-            nombre: "Mouses",
-            id: "mouses"
-        },
-        precio: 3499,
-    },
-
-    {
-        id: "mouse-04",
-        titulo: "Mouse Inalambrico Genius Nx 7000",
-        imagen: "./img/mouses/mouse-oficina.webp",
-        categoria: {
-            nombre: "Mouses",
-            id: "mouses"
-        },
-        precio: 4499,
-    },
-
-    //teclados
-    {
-        id: "teclado-01",
-        titulo: "Teclado HyperX Alloys Core RGB ",
-        imagen: "./img/teclados/teclado-hyperx-alloy-core-rgb.webp",
-        categoria: {
-            nombre: "Teclados",
-            id: "teclados"
-        },
-        precio: 34999,
-    },
-
-    {
-        id: "teclado-02",
-        titulo: "Teclado Genius Slimstar 230",
-        imagen: "./img/teclados/teclado-genius-slimstar-230.webp",
-        categoria: {
-            nombre: "Teclados",
-            id: "teclados"
-        },
-        precio: 4350,
-    },
-
-    {
-        id: "teclado-03",
-        titulo: "Teclado Genius GX Scorpion K8",
-        imagen: "./img/teclados/teclado-genius-gx-scorpion-k8.webp",
-        categoria: {
-            nombre: "Teclados",
-            id: "teclados"
-        },
-        precio: 5300,
-    },
-
-    {
-        id: "teclado-04",
-        titulo: "Teclado HyperX Alloys FPS PRO",
-        imagen: "./img/teclados/teclado-hyperx-alloys-fps-pro.webp",
-        categoria: {
-            nombre: "Teclados",
-            id: "teclados"
-        },
-        precio: 19999,
-    },
-
-    //auriculares
-    {
-        id: "auricular-01",
-        titulo: "Auricular Logitech Astro A10",
-        imagen: "./img/auriculares/auris-astro-a10.webp",
-        categoria: {
-            nombre: "Auriculares",
-            id: "auriculares"
-        },
-        precio: 14499,
-    },
-
-    {
-        id: "auricular-02",
-        titulo: "Auricular HyperX Cloud Stinger Core",
-        imagen: "./img/auriculares/auris-hyperx-cloud-stinger-ps4.webp",
-        categoria: {
-            nombre: "Auriculares",
-            id: "auriculares"
-        },
-        precio: 29999,
-    },
-
-    {
-        id: "auricular-03",
-        titulo: "Auricular Logitech H111",
-        imagen: "./img/auriculares/auris-logitech-h111.webp",
-        categoria: {
-            nombre: "Auriculares",
-            id: "auriculares"
-        },
-        precio: 5999,
-    },
-
-    {
-        id: "auricular-04",
-        titulo: "auricular genius Hs- G560",
-        imagen: "./img/auriculares/genius-hs-g560.webp",
-        categoria: {
-            nombre: "Auriculares",
-            id: "auriculares"
-        },
-        precio: 8300,
-    }
-];
+let productos = [];
+fetch("./js/productos.json")
+.then(response => response.json())
+.then(data => {
+    productos = data;
+    cargarProductos(productos)
+})
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria");
@@ -161,8 +31,6 @@ function cargarProductos(productosElegidos) {
     })
     actualizarBotonesAgregar();
 }
-
-cargarProductos(productos);
 
 botonesCategorias.forEach(boton => {
     boton.addEventListener("click", (e) => {
@@ -202,6 +70,24 @@ if (productosEnCarritoLS) {
 
 
 function agregarAlCarrito(e) {
+
+    Toastify({
+        text: "Producto agregado",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #03174d, #3b6fff)",
+          borderRadius: "2rem",
+        },
+        offset: {
+            x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: '2rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+          },
+        onClick: function(){} // Callback after click
+      }).showToast();
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton);
     if (productosEnCarrito.some(producto => producto.id === idBoton)) {
